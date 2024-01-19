@@ -1,11 +1,11 @@
 # GoBoard Template
-Template project and makefile for building systemverilog hardware designs for the NANDLand GoBoard development board using an open-source tool chain on Linux.
+Template project and makefile for building Systemverilog hardware designs for the NAND and GoBoard development board using an open-source toolchain on Linux.
 
 The template implements a typical Blinky project with the 25MHz clock divided down and used to blink the green LED.  
 
-If all is well with your installation (toolchain) then this should work without problems out of the box.
+If all is well with your installation (toolchain), this should work without problems out of the box.
 
-NOTE: The ICE40 HX1K () package used on the GoBoard does not bond the PLL to a pin so the maximum clock speed available is 25MHz.
+NOTE: The ICE40 HX1K () package used on the GoBoard does not bond the PLL to a pin, so the maximum clock speed available is 25MHz.
 
 ## Toolchain
 
@@ -26,15 +26,15 @@ It also uses [GtkWave](https://gtkwave.sourceforge.net/) to display simulation w
 | ----|---|
 | src/hdl | Hardware design source files (synthesis)|
 | src/tb  | Verification test benches (simulation)|
-| build   | All build outputs (created during build process)|
+| build   | All build outputs (created during the build process)|
 | .vscode | VS Code related files|
 
-The hdl and tp folders include a skeleton top module.  The top module instantiates a 100MHz clock using the Ice40 PLL primitive, see the **icepll** utility if you need different values.
+The hdl and tb folders include a skeleton top module.  
 
 ## Makefile
 The template is built using a makefile (make).  It provides only Linux support. 
 
-Change the PROJECT variable in the makefile to match your project name.  
+You can change the PROJECT variable in the makefile to match your project name.  
 
 All other configuration is set for the GoBoard development board, if you are using a different board you will need to change this.
 
@@ -51,11 +51,11 @@ Add additional sources and test benches to the SRCS and SRCS_TB variables as you
 | prog | Uploads the bitstream to flash|
 | timing | Generates a simple timing report|
 | floorplan | Opens nextpnr in GUI mode to show floor planning|
-| sim | Run simulation using iverilog/vpp, this will display outputs at completion|
+| sim | Run simulation using iverilog/vpp; this will display outputs at completion|
 | test | Runs verification| 
 
 ## VS Code Configuration
-I use VS Code as an IDE for Lattice FPGA development.  The .vscode folder contains configuration (json) files for VS Code.
+I use VS Code as an IDE for Lattice FPGA development.  The .vscode folder contains configuration (JSON) files for VS Code.
 
 | File | Purpose | 
 | -----| ------- |
