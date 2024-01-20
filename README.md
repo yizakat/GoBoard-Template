@@ -62,6 +62,32 @@ I use VS Code as an IDE for Lattice FPGA development.  The .vscode folder contai
 | extensions.json| A list of extensions that are useful when working with Verilog|
 | tasks.json| Tasks for executing selected makefile targets |
 
+## SVLS Extension
+This is a Systemverilog Language Server.  The .svlint.toml file located in the root of the project configures which rules are checked.  These are documented (somewhat erratically) on the SVLS website.  
+
+It is quite possible to create rules that contradict each other, in fact if no .svlint.toml is configured then all rules are active and exactly this happens.
+
+## VerilogHDL Extension
+
+If you are using the Verilog extension then you will need to add the following to your settings.json (or configure directly in the extension):
+
+```json
+"verilog.linting.iverilog.arguments": "-Wall -Y.sv -y ./src/hdl -y ./src/tb  -l /usr/local/share/yosys/ice40/cells_sim.v",
+"verilog.linting.linter": "iverilog",
+"verilog.linting.iverilog.runAtFileLocation": false
+```
+
+Iverilog searches for unknown modules by looking for a file with the same name as the module in the source folders.
+
+That is, it looks to resolve **i2s_mod** by searching for a file called **i2s_mod.sv**.  
+
+The -Y and -y flags configure the file type suffix and folders respectively 
+
+``` -Y.sv -y ./src/hdl -y ./src/tb```
+
+The folders are relative to the top-level folder.
+
+
 ## Other Files
 The top-level folder contains:
 
