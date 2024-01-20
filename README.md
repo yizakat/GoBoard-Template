@@ -1,5 +1,5 @@
 # GoBoard Template
-Template project and makefile for building Systemverilog hardware designs for the NAND and GoBoard development board using an open-source toolchain on Linux.
+Template project and makefile for building Systemverilog hardware designs for the [Nandland Go Board](https://nandland.com/the-go-board/) development board using an open-source toolchain on Linux.
 
 The template implements a typical Blinky project with the 25MHz clock divided down and used to blink the green LED.  
 
